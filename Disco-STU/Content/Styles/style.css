@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+body, html{
+    padding:0;
+    margin:0;
+    font-family: "PT Sans", sans-serif;
+    overflow-x: hidden;
+}
+* {
+    box-sizing: border-box;
+}
+a {
+    color: #0099ff;
+}
+.header,
+.section,
+.footer {
+    width:100%;
+}
+.header, 
+.footer{
+    background-color:#333;
+    color:white;
+    padding:10px;
+    padding-bottom:0;
+}
+.header{
+    display:flex;
+    flex-wrap: wrap;
+}
+.header h1,
+.header .menu {
+    margin:0;
+    padding:10px;
+    padding-bottom:5px;
+    width: 25%;
+}
+.header h1 {
+    margin-bottom:-6px;
+    text-transform: uppercase;
+    animation-name: Rainbow-Text;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+.header h1 object{
+    float:left;
+    width: 110px;
+    margin-bottom:-5px;
+}
+.header small {
+    font-size:40px;
+    display:block;
+    margin-bottom:-25px;
+}
+.header .menu {
+    width:75%;
+    text-align:right;
+}
+.header .menu a{
+    color: white;
+    transition: color .5s;
+    font-size: 26px;
+    padding:5px 20px;
+    margin:0;
+    margin-top:63px;
+    margin-bottom:-6px;
+    display:inline-block;
+    border-top-right-radius:10px;
+    border-top-left-radius:10px;
+}
+.header .menu a.selected{
+    cursor:default;
+    animation-name: Rainbow;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+.header .menu a:not(.selected):hover{
+    background-color:#444;
+    cursor:pointer;
+}
+.header .menu a:last-of-type:after{
+    content: "";
+}
+.header .menu a:hover{
+    background-color:#444;
+}
+.header .rainbow {
+    width:calc(100% + 20px);
+    height:4px;
+    margin:-10px;
+    margin-top:0;
+    animation-name: Rainbow;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+.footer{
+    padding: 10px;
+    display:flex;
+}
+.footer span{
+    display:inline-block;
+    width:33%;
+}
+.footer span:nth-of-type(2){
+    text-align: center;
+}
+.footer span:nth-of-type(3){
+    text-align: right;
+}
+.section {
+    display:flex;
+    margin:-10px 0;
+    margin-bottom:-14px;
+}
+.section .column{
+    padding:10px;
+}
+.section .column > h1{
+    width:100%;
+    margin:0;
+    margin-bottom:15x;
+    padding:0;
+    padding-bottom:15px;
+    font-weight: bold;
+    border-bottom:2px solid #ddd;
+}
+.section .right{
+    width:400px;
+    background-color:#eee;
+}
+.section .left{
+    width:calc(100% - 400px);
+}
+.find {
+    padding: 20px;
+}
+.find .title {
+    font-size: 24px;
+}
+#sliderAgno {
+    margin:50px 5px;
+    margin-top:10px;
+}
+label[for="sliderAgno"]{
+    text-align:center;
+    width:100%;
+    display:block;
+    font-size:16px;
+}
+.psw {
+    width:10%;
+    height:30px;
+    background-color:#0099ff;
+    border:none;
+}
+.psw:hover,
+.psw:focus {
+    background-color:#0066cc;
+}
+input[type="password"]{
+    width:calc(100% - 100px);
+}
+.types {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.type {
+    width:250px;
+    margin: 10px;
+    height: 250px;
+    text-align: center;
+    border-radius: 50%;
+    transition: width .5s, margin .5s, height .5s;
+    cursor:pointer;
+    background-image: url('../Images Vectorized/vinilo.svg');
+    background-size: 100%;
+}
+.type span{
+    color: white;
+    font-size: 16px;
+    margin-top:15px;
+    display:block;
+    transition: transform .5s;
+}
+.type:hover {
+    width:260px;
+    margin: 5px;
+    height: 260px;
+    animation-name: Rotate-Disk;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.type:nth-of-type(7n){
+    background-color:#03f;
+}
+.type:nth-of-type(7n + 1){
+    background-color:#6cf;
+}
+.type:nth-of-type(7n + 2){
+    background-color:#3c3;
+}
+.type:nth-of-type(7n + 3){
+    background-color:#cf3;
+}
+.type:nth-of-type(7n + 4){
+    background-color:#c60;
+}
+.type:nth-of-type(7n + 5){
+    background-color:#c00;
+}
+.type:nth-of-type(7n + 6){
+    background-color:#606;
+}
+
+.scrollControl {
+    position: fixed;
+    top:0;
+    padding-top:10px;
+    padding-right:10px;
+}

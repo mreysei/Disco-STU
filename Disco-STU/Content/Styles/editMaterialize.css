@@ -1,0 +1,46 @@
+.card{
+    margin-bottom:10px !important;
+    background-color:#333;
+}
+.btn,
+.noUi-connect {
+    background-color:#0099ff !important;
+}
+.btn:focus,
+.btn:hover {
+    background-color:#0066cc;
+}
+input:focus{
+    border-color: #0099ff !important;
+}
+input:focus + label{
+    color: #0099ff !important;
+}
+.noUi-handle{
+    width: 20px !important;
+    height: 20px !important;
+    top: -2px !important;
+    left: -10px !important;
+    cursor:pointer !important;
+}
+.noUi-handle:before,
+.noUi-handle:after{
+    left: 6px !important;
+    top: 2px !important;
+}
+.noUi-handle:after{
+    left: 11px !important;
+}
+.tabs{
+    background-color: #333;
+}
+.tabs .indicator{
+    background-color:#0099ff;
+}
+.tabs a{
+    color:#999 !important;
+}
+.tabs a.active,
+.tabs a.hover{
+    color:#0099ff !important;
+}

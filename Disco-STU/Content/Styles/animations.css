@@ -1,0 +1,61 @@
+
+@keyframes Rainbow {
+    from {
+        background-color:#03f;
+    }
+    14.28% {
+        background-color:#6cf;
+    }
+    28.56% {
+        background-color:#3c3;
+    }
+    42.84% {
+        background-color:#cf3;
+    }
+    57.12% {
+        background-color:#c60;
+    }
+    71.40% {
+        background-color:#c00;
+    }
+    85.68% {
+        background-color:#606;
+    }
+    to {
+        background-color:#03f;
+    }
+}
+@keyframes Rainbow-Text {
+    from {
+        color:#03f;
+    }
+    14.28% {
+        color:#6cf;
+    }
+    28.56% {
+        color:#3c3;
+    }
+    42.84% {
+        color:#cf3;
+    }
+    57.12% {
+        color:#c60;
+    }
+    71.40% {
+        color:#c00;
+    }
+    85.68% {
+        color:#606;
+    }
+    to {
+        color:#03f;
+    }
+}
+@keyframes Rotate-Disk{
+    from{
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg)
+    }
+}
