@@ -90,3 +90,5 @@ C:\Users\alumno\Source\Repos\Disco-STU\Disco-STU\bin\es\System.Web.Http.resource
 C:\Users\alumno\Source\Repos\Disco-STU\Disco-STU\bin\es\System.Web.Http.WebHost.resources.dll
 C:\Users\alumno\Source\Repos\Disco-STU\Disco-STU\obj\Debug\Disco-STU.dll
 C:\Users\alumno\Source\Repos\Disco-STU\Disco-STU\obj\Debug\Disco-STU.pdb
+C:\Users\alumno\Source\Repos\Disco-STU\Disco-STU\bin\VisualStudioGitIgnore.dll
+C:\Users\alumno\Source\Repos\Disco-STU\Disco-STU\obj\Debug\Disco-STU.csprojResolveAssemblyReference.cache
