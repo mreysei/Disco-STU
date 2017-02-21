@@ -47,3 +47,7 @@ C:\Users\alumno\Source\Repos\Disco-STU\Disco-STU.Tests\bin\Debug\es\System.Web.W
 C:\Users\alumno\Source\Repos\Disco-STU\Disco-STU.Tests\obj\Debug\Disco-STU.Tests.csprojResolveAssemblyReference.cache
 C:\Users\alumno\Source\Repos\Disco-STU\Disco-STU.Tests\obj\Debug\Disco-STU.Tests.dll
 C:\Users\alumno\Source\Repos\Disco-STU\Disco-STU.Tests\obj\Debug\Disco-STU.Tests.pdb
+C:\Users\alumno\Source\Repos\Disco-STU\Disco-STU.Tests\bin\Debug\EntityFramework.dll
+C:\Users\alumno\Source\Repos\Disco-STU\Disco-STU.Tests\bin\Debug\EntityFramework.xml
+C:\Users\alumno\Source\Repos\Disco-STU\Disco-STU.Tests\bin\Debug\Newtonsoft.Json.dll
+C:\Users\alumno\Source\Repos\Disco-STU\Disco-STU.Tests\bin\Debug\Newtonsoft.Json.xml
