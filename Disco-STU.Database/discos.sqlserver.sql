@@ -1,14 +1,14 @@
-
+﻿
 -- Dump File
 --
 -- Database is ported from MS Access
 -- --------------------------------------------------------
 -- Program Version 3.0.148
 
---CREATE DATABASE Discos;
---GO
+CREATE DATABASE DiscoSTU;
+GO
 
-USE Discos;
+USE DiscoSTU;
 GO
 
 -- borrado de tablas
