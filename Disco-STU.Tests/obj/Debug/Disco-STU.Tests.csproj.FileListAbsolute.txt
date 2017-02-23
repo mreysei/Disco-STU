@@ -49,5 +49,3 @@ C:\Users\alumno\Source\Repos\Disco-STU\Disco-STU.Tests\obj\Debug\Disco-STU.Tests
 C:\Users\alumno\Source\Repos\Disco-STU\Disco-STU.Tests\obj\Debug\Disco-STU.Tests.pdb
 C:\Users\alumno\Source\Repos\Disco-STU\Disco-STU.Tests\bin\Debug\EntityFramework.dll
 C:\Users\alumno\Source\Repos\Disco-STU\Disco-STU.Tests\bin\Debug\EntityFramework.xml
-C:\Users\alumno\Source\Repos\Disco-STU\Disco-STU.Tests\bin\Debug\Newtonsoft.Json.dll
-C:\Users\alumno\Source\Repos\Disco-STU\Disco-STU.Tests\bin\Debug\Newtonsoft.Json.xml

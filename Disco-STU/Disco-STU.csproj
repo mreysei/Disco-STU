@@ -207,6 +207,7 @@
     <Content Include="Content\Images\music.png" />
     <Content Include="Content\Images\vinilo.png" />
     <Content Include="Content\Styles\animations.css" />
+    <Content Include="Content\Styles\chartist.css" />
     <Content Include="Content\Styles\editMaterialize.css" />
     <Content Include="Content\Styles\materialize.css" />
     <Content Include="Content\Styles\nouislider.css" />
@@ -224,6 +225,7 @@
     </Content>
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="Scripts\chartist.js" />
     <Content Include="Scripts\jquery.arctext.js" />
     <Content Include="Scripts\jquery.js" />
     <Content Include="Scripts\materialize.js" />
@@ -299,11 +301,6 @@
     <Content Include="Models\Model.edmx.diagram">
       <DependentUpon>Model.edmx</DependentUpon>
     </Content>
-    <Content Include="Views\Disco\Create.cshtml" />
-    <Content Include="Views\Disco\Delete.cshtml" />
-    <Content Include="Views\Disco\Details.cshtml" />
-    <Content Include="Views\Disco\Edit.cshtml" />
-    <Content Include="Views\Disco\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

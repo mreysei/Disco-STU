@@ -1,5 +1,8 @@
 ﻿var Generos = React.createClass({
-    render: function() {
+    componentDidMount: () => {
+        $('.type').find('span').arctext({ radius: 100 });
+    },
+    render: () => {
         return (
             <div>
                 <h1>Géneros</h1>

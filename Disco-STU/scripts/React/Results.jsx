@@ -10,14 +10,85 @@ var Resultados = React.createClass({
         return (
             <div>
                 <h1>Resultados</h1>
-                <div className="block" >
+                <div className="block">
                     <div className="info">
                         <span>Po encima <small>(1996)</small></span>
                         <span><div className="chip">Paquito</div></span>
-                        <span><div className="stars">5 *</div></span>
+                        <span><div className="stars">5  <div className="star"></div></div></span>
                     </div>
-                    <div className="setStars">
-                        { stars }
+                    <div className="setStars">{ stars }
+                    </div>
+                </div>
+                <div className="block">
+                    <div className="info">
+                        <span>Po encima de wisin y yandel <small>(1996)</small></span>
+                        <span><div className="chip">Paquito</div></span>
+                        <span><div className="stars">5  <div className="star"></div></div></span>
+                    </div>
+                    <div className="setStars">{ stars }
+                    </div>
+                </div>
+                <div className="block">
+                    <div className="info">
+                        <span>Po encima de wisin y yandel <small>(1996)</small></span>
+                        <span><div className="chip">Paquito</div></span>
+                        <span><div className="stars">5  <div className="star"></div></div></span>
+                    </div>
+                    <div className="setStars">{ stars }
+                    </div>
+                </div>
+                <div className="block">
+                    <div className="info">
+                        <span>Po encima de wisin y yandel <small>(1996)</small></span>
+                        <span><div className="chip">Paquito</div></span>
+                        <span><div className="stars">5  <div className="star"></div></div></span>
+                    </div>
+                    <div className="setStars">{ stars }
+                    </div>
+                </div>
+                <div className="block">
+                    <div className="info">
+                        <span>Po encima de wisin y yandel <small>(1996)</small></span>
+                        <span><div className="chip">Paquito</div></span>
+                        <span><div className="stars">5  <div className="star"></div></div></span>
+                    </div>
+                    <div className="setStars">{ stars }
+                    </div>
+                </div>
+                <div className="block">
+                    <div className="info">
+                        <span>Po encima de wisin y yandel <small>(1996)</small></span>
+                        <span><div className="chip">Paquito</div></span>
+                        <span><div className="stars">5  <div className="star"></div></div></span>
+                    </div>
+                    <div className="setStars">{ stars }
+                    </div>
+                </div>
+                <div className="block">
+                    <div className="info">
+                        <span>Po encima de wisin y yandel <small>(1996)</small></span>
+                        <span><div className="chip">Paquito</div></span>
+                        <span><div className="stars">5  <div className="star"></div></div></span>
+                    </div>
+                    <div className="setStars">{ stars }
+                    </div>
+                </div>
+                <div className="block">
+                    <div className="info">
+                        <span>Po encima de wisin y yandel <small>(1996)</small></span>
+                        <span><div className="chip">Paquito</div></span>
+                        <span><div className="stars">5  <div className="star"></div></div></span>
+                    </div>
+                    <div className="setStars">{ stars }
+                    </div>
+                </div>
+                <div className="block">
+                    <div className="info">
+                        <span>Po encima de wisin y yandel <small>(1996)</small></span>
+                        <span><div className="chip">Paquito</div></span>
+                        <span><div className="stars">5  <div className="star"></div></div></span>
+                    </div>
+                    <div className="setStars">{ stars }
                     </div>
                 </div>
             </div>

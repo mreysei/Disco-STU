@@ -264,7 +264,7 @@ input[type="password"]{
 #types.active > div,
 #results.active > div,
 #ranking.active > div,
-#contact.active > div{
+#contact.active{
     display:flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -286,6 +286,11 @@ input[type="password"]{
 #contact .member:nth-of-type(2) h1{
     text-align:right;
 }
+#results .block.success {
+    animation-name: SuccessColor;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+}
 #results .block {
     width:300px;
     padding:5px;
@@ -299,6 +304,7 @@ input[type="password"]{
     background-color:#777;
     color:white;
     border-radius: 5px;
+    margin-bottom:10px;
 }
 #results .block span{
     width:80%;
@@ -309,7 +315,8 @@ input[type="password"]{
     width: 50%;
 }
 #results .block span:nth-of-type(1){
-    font-size:20px;
+    font-size:18px;
+    line-height:20px;
     width:100%;
 }
 #results .block .info span:nth-of-type(3) {
@@ -337,17 +344,30 @@ input[type="password"]{
     margin:-5px;
     padding-top:15px;
     text-align:center;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
-#results .block .setStars .star{
+#results .block .setStars .star,
+#results .block .stars .star{
     background-image: url('../Images Vectorized/corazon.svg');
     background-size: 25px;
     background-repeat:no-repeat;
-    width:30px;
-    height:30px;
-    margin:2.5px;
+    width:25px;
+    height:25px;
+    margin:0 5px;
     display:inline-block;
     cursor:pointer;
     transition: filter .5s;
+}
+#results .block .stars .star{
+    background-size: 20px;
+    width:20px;
+    height:20px;
+    margin-left:5px;
+    margin-right:-10px;
+    float:right;
+    transition: background-color .5s;
+    background-color:transparent;
 }
 #results .block .setStars .star:hover ~ .star{
     -webkit-filter: grayscale(100%);
@@ -364,3 +384,70 @@ input[type="password"]{
     -o-filter: grayscale(0%);
 }
 
+#ranking > div{
+	counter-reset: posicion;
+    flex-wrap:wrap;
+    align-items: flex-end;
+}
+#ranking .rank{
+    width:calc(20% - 10px);
+    margin:5px;
+    text-align:center;
+    font-size:60px;
+    border-radius:3px;
+}
+#ranking .rank h2{
+    background-color:#ddd;
+    font-size:30px;
+}
+#ranking h1:nth-of-type(2){
+    margin-top:20px;
+    order:6;
+}
+#ranking .rank:nth-of-type(1){
+    order:3;
+    background-color:gold;
+    padding:50px 0;
+}
+#ranking .rank:nth-of-type(2){
+    order:2;
+    background-color:gray;
+}
+#ranking .rank:nth-of-type(3){
+    order:4;
+    background-color:gray;
+}
+#ranking .rank:nth-of-type(4){
+    order:1;
+    background-color:sandybrown;
+}
+#ranking .rank:nth-of-type(5){
+    order:5;
+    background-color:sandybrown;
+}
+#ranking .rank:nth-of-type(2),
+#ranking .rank:nth-of-type(3){
+    padding:30px 0;
+    margin:25px 0;
+}
+
+#ranking .rank:nth-of-type(4),
+#ranking .rank:nth-of-type(5){
+    margin:55px 0;
+}
+
+#ranking .rank:before{
+	content: counter(posicion);
+	counter-increment: posicion;
+    color:white;
+}
+
+#ranking .ct-chart{
+    order:7;
+    width:100% !important;
+    height:500px !important;
+    font-size:16px !important;
+}
+#ranking .ct-chart .ct-bar {
+    stroke-width: 70px;
+}
