@@ -21,30 +21,26 @@
             <small>Disco</small>Stu
         </h1>
         <div class="menu">
-            <a role="index" href="#" class="selected">Inicio</a>
-            <a role="ranking" href="#">Ranking</a>
-            <a role="contact" href="#">Contacto</a>
+            <a role="types" href="">Inicio</a>
+            <a role="results" href="">Resultados</a>
+            <a role="ranking" href="">Ranking</a>
+            <a role="contact" href="">Contacto</a>
         </div>
         <div class="rainbow"></div>
     </div>
     <div class="section">
-        <div class="column left types">
-            <h1>Géneros</h1>
-            <div class="type"><span>Dance</span></div>
-            <div class="type"><span>Dance pop</span></div>
-            <div class="type"><span>Dance punk</span></div>
-            <div class="type"><span>Disco</span></div>
-            <div class="type"><span>Euro disco</span></div>
-            <div class="type"><span>Instrumental Easy Listening</span></div>
-            <div class="type"><span>Italo disco</span></div>
-            <div class="type"><span>Pop rock</span></div>
-            <div class="type"><span>Post-disco</span></div>
-            <div class="type"><span>Rock</span></div>
-            <div class="type"><span>Rock sinfónico</span></div>
-            <div class="type"><span>Reggae</span></div>
-            <div class="type"><span>Disco samba</span></div>
-            <div class="type"><span>Rocksteady</span></div>
-            <div class="type"><span>Rock</span></div>
+        <div id="container"class="column left">
+            <div id="types"></div>
+            <div id="results"></div>
+            <div id="ranking"></div>
+            <div id="contact">
+                <div class="member">
+                    <h1>Omar</h1>
+                </div>
+                <div class="member">
+                    <h1>Michael</h1>
+                </div>
+            </div>
         </div>
         <div class="column right">
             <div id="menuRight">
@@ -115,14 +111,16 @@
             <a href="http://twitter.com/mreysei" target="_blank">Michael</a>
         </span>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react-dom.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.7.1/remarkable.min.js"></script>
     <script src="@Url.Content("~/Scripts/jquery.js")"></script>
     <script src="@Url.Content("~/Scripts/jquery.arctext.js")"></script>
     <script src="@Url.Content("~/Scripts/materialize.js")"></script>
     <script src="@Url.Content("~/Scripts/nouislider.js")"></script>
+    <script src="@Url.Content("~/Scripts/React/react.js")"></script>
+    <script src="@Url.Content("~/Scripts/React/react-dom.js")"></script>
+    <script src="@Url.Content("~/Scripts/React/remarkable.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/React/Generos.jsx")"></script>
+    <script src="@Url.Content("~/Scripts/React/Ranking.jsx")"></script>
+    <script src="@Url.Content("~/Scripts/React/Results.jsx")"></script>
     <script src="@Url.Content("~/Scripts/script.js")"></script>
-    <!--<script src="@@Url.Content("~/Scripts/Index.jsx")"></script>-->
 </body>
 </html>

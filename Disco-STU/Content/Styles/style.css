@@ -3,7 +3,6 @@ body, html{
     padding:0;
     margin:0;
     font-family: "PT Sans", sans-serif;
-    overflow-x: hidden;
 }
 * {
     box-sizing: border-box;
@@ -69,19 +68,14 @@ a {
 }
 .header .menu a.selected{
     cursor:default;
-    animation-name: Rainbow;
-    animation-duration: 10s;
-    animation-iteration-count: infinite;
+    background-color:#111;
 }
-.header .menu a:not(.selected):hover{
+.header .menu a:hover:not(.selected){
     background-color:#444;
     cursor:pointer;
 }
 .header .menu a:last-of-type:after{
     content: "";
-}
-.header .menu a:hover{
-    background-color:#444;
 }
 .header .rainbow {
     width:calc(100% + 20px);
@@ -114,12 +108,12 @@ a {
 .section .column{
     padding:10px;
 }
-.section .column > h1{
+.section #container div > div > h1{
     width:100%;
     margin:0;
-    margin-bottom:15x;
     padding:0;
-    padding-bottom:15px;
+    padding-bottom:10px;
+    margin-bottom:10px;
     font-weight: bold;
     border-bottom:2px solid #ddd;
 }
@@ -127,7 +121,7 @@ a {
     width:400px;
     background-color:#eee;
 }
-.section .left{
+#container.left{
     width:calc(100% - 400px);
 }
 .find {
@@ -159,39 +153,70 @@ label[for="sliderAgno"]{
 input[type="password"]{
     width:calc(100% - 100px);
 }
-.types {
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
 .type {
+    position:relative;
     width:250px;
-    margin: 10px;
     height: 250px;
-    text-align: center;
-    border-radius: 50%;
-    transition: width .5s, margin .5s, height .5s;
+    margin: 10px;
+    background-image: url('../Images Vectorized/caratula.svg'), 
+         url('../Images Vectorized/vinilo.svg');
+    background-size: 250px;
+    background-position: left, right;
+    background-repeat:no-repeat;
+    border-radius: 4px;
     cursor:pointer;
-    background-image: url('../Images Vectorized/vinilo.svg');
-    background-size: 100%;
+    transition: width .5s;
+    overflow: hidden;
 }
-.type span{
-    color: white;
-    font-size: 16px;
-    margin-top:15px;
+.type > span{
+    text-align:center;
+    position:absolute;
+    color:white;
+    font-weight:bold;
+    width:250px;
+    height: 250px;
+    padding-top:25px;
+    opacity:0;
+    transition: margin .5s, opacity .5s, transform .5s;
+}
+.type h2{
+    margin:0;
+    padding:0;
+    width: 100%;
+    text-align:center;
+    font-size:20px;
+    margin-top:40px;
+    padding:5px;
+    font-weight:bold;
+    background-color:rgba(255,255,255,0.3);
+    transition: width .5s;
+}
+.type p{
+    margin:0;
+    padding:0;
+    position:absolute;
     display:block;
-    transition: transform .5s;
+    bottom:5px;
+    right:5px;
+    transition: right .5s;
 }
+.type:hover{
+    width:375px;
+}
+.type:hover > span{
+    transform:rotate(90deg);
+    margin-left:125px;
+    opacity:1;
+}
+.type:hover > h2{
+    width:calc(100% - 125px);
+}
+.type:hover > p{
+    right: 130px
+}
+/*
 .type:hover {
-    width:260px;
-    margin: 5px;
-    height: 260px;
-    animation-name: Rotate-Disk;
-    animation-duration: 10s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
 }
-
 .type:nth-of-type(7n){
     background-color:#03f;
 }
@@ -213,10 +238,129 @@ input[type="password"]{
 .type:nth-of-type(7n + 6){
     background-color:#606;
 }
-
+    */
 .scrollControl {
     position: fixed;
     top:0;
     padding-top:10px;
     padding-right:10px;
 }
+
+#types > div {
+    width:100%;
+}
+#types,
+#results,
+#ranking,
+#contact{
+    display:none;
+}
+#types.active,
+#results.active,
+#ranking.active,
+#contact.active{
+    display:block;
+}
+#types.active > div,
+#results.active > div,
+#ranking.active > div,
+#contact.active > div{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items:flex-start;
+}
+#container > div > div{
+    width:100%;
+}
+#menuRight{
+    overflow-y:auto;
+    overflow-x:hidden;
+}
+#contact .member{
+    width:50%;
+}
+#contact .member h1{
+    padding:10px;
+}
+#contact .member:nth-of-type(2) h1{
+    text-align:right;
+}
+#results .block {
+    width:300px;
+    padding:5px;
+    padding-left:100px;
+    background-image:url('../Images Vectorized/music.svg');
+    background-repeat:no-repeat;
+    background-position: left;
+    background-size: 95px;
+    display:flex;
+    flex-wrap: wrap;
+    background-color:#777;
+    color:white;
+    border-radius: 5px;
+}
+#results .block span{
+    width:80%;
+    display:inline-block;
+}
+#results .block span:nth-of-type(2),
+#results .block span:nth-of-type(3) {
+    width: 50%;
+}
+#results .block span:nth-of-type(1){
+    font-size:20px;
+    width:100%;
+}
+#results .block .info span:nth-of-type(3) {
+    text-align:right;
+}
+#results .block span:nth-of-type(3) div{
+    background-color:#0099ff;
+    color:white;
+    display:inline-block;
+    padding:5px 15px;
+    border-radius:3px;
+    cursor:pointer;
+    transition: background-color .5s;
+}
+#results .block span:nth-of-type(3) div.dis{
+    cursor:default;
+    background-color:gray;
+}
+#results .block span:nth-of-type(3) div:hover{
+    background-color:#0066cc;
+}
+#results .block .setStars {
+    display: none;
+    background-color:#999;
+    margin:-5px;
+    padding-top:15px;
+    text-align:center;
+}
+#results .block .setStars .star{
+    background-image: url('../Images Vectorized/corazon.svg');
+    background-size: 25px;
+    background-repeat:no-repeat;
+    width:30px;
+    height:30px;
+    margin:2.5px;
+    display:inline-block;
+    cursor:pointer;
+    transition: filter .5s;
+}
+#results .block .setStars .star:hover ~ .star{
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+}
+
+#results .block .setStars .star,
+#results .block .setStars .star:hover{
+    -webkit-filter: grayscale(0%);
+    -moz-filter: grayscale(0%);
+    -ms-filter: grayscale(0%);
+    -o-filter: grayscale(0%);
+}
+
