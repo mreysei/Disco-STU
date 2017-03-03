@@ -14,11 +14,11 @@ namespace Disco_STU.Models
     
     public partial class v_disco
     {
-        public int IdDisco { get; set; }
-       // public int IdTipo { get; set; }
         public string Titulo { get; set; }
         public Nullable<double> Agno { get; set; }
         public string Interprete { get; set; }
-        public int mediaPuntuacion { get; set; }
+        public Nullable<int> mediaPuntuacion { get; set; }
+        public Nullable<int> IdTipo { get; set; }
+        public int IdDisco { get; set; }
     }
 }

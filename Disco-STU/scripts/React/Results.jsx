@@ -1,4 +1,5 @@
 ﻿let stars = [], resultList = [];
+let controlTime = true;
 for (i = 0; i < 10; i++) {
     stars.push(
         <div key={i} className="star"></div>
@@ -24,8 +25,11 @@ var Resultados = React.createClass({
     componentDidMount: function () {
         filter.search = getParameterByName('search').toLowerCase();
         filter.firstYear = parseInt(getParameterByName('firstYear'));
+        filter.firstYear = isNaN(filter.firstYear) ? 1970 : filter.firstYear;
         filter.lastYear = parseInt(getParameterByName('lastYear'));
-        filter.type = getParameterByName('type');
+        filter.lastYear = isNaN(filter.lastYear) ? 1990 : filter.lastYear;
+        filter.type = parseInt(getParameterByName('type'));
+        filter.type = isNaN(filter.type) ? null : filter.type;
         $.ajax({
             url: this.props.url,
             dataType: 'json',
@@ -39,27 +43,37 @@ var Resultados = React.createClass({
         });
     },
     render: function () {
+        let id = 0;
         for (i = 0; i < this.state.result.length; i++) {
-            if ((this.state.result[i].Titulo.toLowerCase().indexOf(filter.search) >= 0 ||
+            let agno = this.state.result[i].Agno == null ? 1970 : this.state.result[i].Agno;
+            if ((((this.state.result[i].Titulo.toLowerCase().indexOf(filter.search) >= 0 ||
                 this.state.result[i].Interprete.toLowerCase().indexOf(filter.search) >= 0) &&
-                this.state.result[i].Agno >= filter.firstYear &&
-                this.state.result[i].Agno <= filter.lastYear /*|| 
-                this.state.result[i].idTipo == filter.type*/) {
+                agno >= filter.firstYear && agno <= filter.lastYear && filter.type == null) ||
+                this.state.result[i].IdTipo == filter.type) &&
+                this.state.result[i].IdDisco != id) {
+                console.log(this.state.result[i].IdDisco);
                 resultList.push(
                     <div key={i} className="block">
-                    <div className="info">
-                        <span>{this.state.result[i].Titulo} <small>{
-                               (this.state.result[i].Agno != null) ? ("(" + this.state.result[i].Agno + ")") : ""
-                            }</small></span>
-                        <span><div className="chip">{this.state.result[i].Interprete}</div></span>
-                        <span><div className="stars">5  <div className="star"></div></div></span>
+                        <div className="info">
+                            <span>{this.state.result[i].Titulo} <small>{
+                                   (this.state.result[i].Agno != null) ? ("(" + this.state.result[i].Agno + ")") : ""
+                                }</small></span>
+                            <span><div className="chip">{this.state.result[i].Interprete}</div></span>
+                            <span><div className="stars">
+                                {this.state.result[i].mediaPuntuacion == null ? 0 : this.state.result[i].mediaPuntuacion}  
+                                <div className="star"></div>
+                            </div></span>
+                        </div>
+                        <div className="setStars">{ stars }</div>
                     </div>
-                    <div className="setStars">{ stars}</div>
-                </div>
                 );
+                id = this.state.result[i].IdDisco;
             }
         }
-        console.log(resultList);
+        if (id == 0 && !controlTime) {
+            resultList.push(<div key="0">No se han encontrado coincidencias</div>)
+        }
+        controlTime = false;
         return (
             <div>
                 <h1>Resultados</h1>

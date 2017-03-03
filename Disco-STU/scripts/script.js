@@ -137,7 +137,17 @@ function defaultPage() {
 }
 setTimeout(function(){
     $('.type').find('span').arctext({ radius: 100 });
+
+    $('.type').on('click', function () {
+        let idTipo = $(this).attr('id');
+        $('#idTipo').val(idTipo);
+        $('.tipoSelection').submit();
+    });
 }, 2000);
+
+$('.tipoSelection').on('submit', function (e) {
+    selectMenu(e, true);
+});
 
 $(document).ready(function () {
     $("#log").validate({

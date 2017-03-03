@@ -19,7 +19,7 @@ var Generos = React.createClass({
     render: function () {
         for (i = 0; i < this.state.result.length; i++) {
             types.push(
-                <div key={this.state.result[i].idTipo} className="type">
+                <div key={this.state.result[i].idTipo} id={this.state.result[i].idTipo} className="type">
                     <span>{this.state.result[i].tipo}</span>
                     <h2>{this.state.result[i].tipo}</h2>
                     <p>{this.state.result[i].ndiscos} Discos</p>
@@ -30,6 +30,9 @@ var Generos = React.createClass({
             <div>
                 <h1>Géneros</h1>
                 { types }
+                <form className="tipoSelection">
+                    <input type="hidden" name="type" id="idTipo" />
+                </form>
             </div>
         );
     }

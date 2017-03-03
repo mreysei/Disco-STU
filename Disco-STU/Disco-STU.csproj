@@ -239,7 +239,9 @@
     <Content Include="Scripts\React\react-with-addons.min.js" />
     <Content Include="Scripts\React\react.min.js" />
     <Content Include="Scripts\script.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\ReactConfig.cs" />
@@ -304,6 +306,7 @@
     </Content>
     <Content Include="Views\Web\Index.cshtml" />
     <Content Include="git.ignore" />
+    <Content Include="Scripts\React\Filter.jsx" />
     <EntityDeploy Include="Models\Model.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model.Designer.cs</LastGenOutput>
@@ -311,8 +314,6 @@
     <Content Include="Models\Model.edmx.diagram">
       <DependentUpon>Model.edmx</DependentUpon>
     </Content>
-    <Content Include="Scripts\React\Filter.jsx" />
-    <Content Include="Scripts\React\Program.jsx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

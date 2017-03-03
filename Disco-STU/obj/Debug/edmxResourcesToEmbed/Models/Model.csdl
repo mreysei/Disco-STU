@@ -65,13 +65,13 @@
   <EntityType Name="v_disco">
     <Key>
       <PropertyRef Name="IdDisco" />
-      <PropertyRef Name="IdTipo" />
     </Key>
-    <Property Name="IdDisco" Type="Int32" Nullable="false" />
-    <Property Name="IdTipo" Type="Int32" Nullable="false" />
     <Property Name="Titulo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
     <Property Name="Agno" Type="Double" />
     <Property Name="Interprete" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="mediaPuntuacion" Type="Int32" />
+    <Property Name="IdTipo" Type="Int32" />
+    <Property Name="IdDisco" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="v_tipo">
     <Key>

@@ -62,13 +62,13 @@ advertencia 6002: La tabla o vista 'DiscoSTU.dbo.v_disco' no tiene definida ning
         <EntityType Name="v_disco">
           <Key>
             <PropertyRef Name="IdDisco" />
-            <PropertyRef Name="IdTipo" />
           </Key>
-          <Property Name="IdDisco" Type="int" Nullable="false" />
-          <Property Name="IdTipo" Type="int" Nullable="false" />
           <Property Name="Titulo" Type="varchar" MaxLength="255" />
           <Property Name="Agno" Type="float" />
           <Property Name="Interprete" Type="varchar" MaxLength="255" />
+          <Property Name="mediaPuntuacion" Type="int" />
+          <Property Name="IdTipo" Type="int" />
+          <Property Name="IdDisco" Type="int" Nullable="false" />
         </EntityType>
         <!--Errores durante la generación:
 advertencia 6002: La tabla o vista 'DiscoSTU.dbo.v_tipo' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
@@ -159,11 +159,12 @@ advertencia 6002: La tabla o vista 'DiscoSTU.dbo.v_top5' no tiene definida ningu
           <EntitySet Name="Tipo" EntityType="Self.Tipo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="v_disco" EntityType="Self.v_disco" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [v_disco].[IdDisco] AS [IdDisco], 
-    [v_disco].[IdTipo] AS [IdTipo], 
     [v_disco].[Titulo] AS [Titulo], 
     [v_disco].[Agno] AS [Agno], 
-    [v_disco].[Interprete] AS [Interprete]
+    [v_disco].[Interprete] AS [Interprete], 
+    [v_disco].[mediaPuntuacion] AS [mediaPuntuacion], 
+    [v_disco].[IdTipo] AS [IdTipo], 
+    [v_disco].[IdDisco] AS [IdDisco]
     FROM [dbo].[v_disco] AS [v_disco]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="v_tipo" EntityType="Self.v_tipo" store:Type="Views" store:Schema="dbo">
@@ -271,13 +272,13 @@ advertencia 6002: La tabla o vista 'DiscoSTU.dbo.v_top5' no tiene definida ningu
         <EntityType Name="v_disco">
           <Key>
             <PropertyRef Name="IdDisco" />
-            <PropertyRef Name="IdTipo" />
           </Key>
-          <Property Name="IdDisco" Type="Int32" Nullable="false" />
-          <Property Name="IdTipo" Type="Int32" Nullable="false" />
           <Property Name="Titulo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="Agno" Type="Double" />
           <Property Name="Interprete" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="mediaPuntuacion" Type="Int32" />
+          <Property Name="IdTipo" Type="Int32" />
+          <Property Name="IdDisco" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="v_tipo">
           <Key>
@@ -453,11 +454,12 @@ advertencia 6002: La tabla o vista 'DiscoSTU.dbo.v_top5' no tiene definida ningu
           <EntitySetMapping Name="v_disco">
             <EntityTypeMapping TypeName="DiscoSTUModel.v_disco">
               <MappingFragment StoreEntitySet="v_disco">
-                <ScalarProperty Name="IdDisco" ColumnName="IdDisco" />
-                <ScalarProperty Name="IdTipo" ColumnName="IdTipo" />
                 <ScalarProperty Name="Titulo" ColumnName="Titulo" />
                 <ScalarProperty Name="Agno" ColumnName="Agno" />
                 <ScalarProperty Name="Interprete" ColumnName="Interprete" />
+                <ScalarProperty Name="mediaPuntuacion" ColumnName="mediaPuntuacion" />
+                <ScalarProperty Name="IdTipo" ColumnName="IdTipo" />
+                <ScalarProperty Name="IdDisco" ColumnName="IdDisco" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
