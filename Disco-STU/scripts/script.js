@@ -86,16 +86,26 @@ function sectionSize() {
     $('.section').css({ "min-height": height });
 };
 
-$('.menu').on('click', 'a', function (e) {
-    e = e || window.event;
-    e.preventDefault();
-    $('#container').children('.active').removeClass('active');
-    $(this).closest('.menu').children('a').removeAttr('class');
-    $(this).addClass('selected');
-    localStorage['page'] = $(this).attr('role');
-    var page = "#" + $(this).attr('role');
-    $('#container').children(page).addClass('active');
+$('.menu').on('click', 'a', selectMenu);
+$('.find').on('submit', function (e) {
+    selectMenu(e, true);
 });
+function selectMenu(e, auto) {
+    e = e || window.event;
+    var page;
+    $('#container').children('.active').removeClass('active');
+    if (auto) {
+        page = "#results";
+        localStorage['page'] = "results";
+    } else {
+        e.preventDefault();
+        $(this).closest('.menu').children('a').removeAttr('class');
+        $(this).addClass('selected');
+        page = "#" + $(this).attr('role');
+        localStorage['page'] = $(this).attr('role');
+    }
+    $('#container').children(page).addClass('active');
+}
 
 $('#results').on('click', '.stars', function () {
     if (!$(this).hasClass('dis')) {
@@ -125,3 +135,82 @@ function defaultPage() {
     $('#container').find(id).addClass('active');
     localStorage['types'];
 }
+setTimeout(function(){
+    $('.type').find('span').arctext({ radius: 100 });
+}, 2000);
+
+$(document).ready(function () {
+    $("#log").validate({
+        rules: {
+            email: {
+                required: true,
+                email: true
+            },
+            password: {
+                required: true
+            }
+        },
+        messages: {
+            email: {
+                required: "Introduzca el correo"
+            },
+            password: {
+                required: "Introduzca la contraseña"
+            }
+        },
+        errorElement: 'div',
+        errorPlacement: function (error, element) {
+            var placement = $(element).data('error');
+            if (placement) {
+                $(placement).append(error)
+            } else {
+                error.insertAfter(element);
+                //Provicional
+                $('#clear').css('display', 'block');
+            }
+        }
+    });
+
+    $('#reg').validate({
+        rules: {
+            name: {
+                required: true
+            },
+            email: {
+                required: true,
+                email: true
+            },
+            repeatEmail: {
+                required: true,
+                email: true,
+                equalTo: "#email"
+            },
+            password: {
+                required: true
+            }
+        },
+        messages: {
+            name: {
+                required: "Introduzca el nombre"
+            },
+            email: {
+                required: "Introduzca el correo"
+            },
+            repeatEmail: {},
+            password: {
+                required: "Introduza la contraseña"
+            }
+        },
+        errorElement: 'div',
+        errorPlacement: function (error, element) {
+            var placement = $(element).data('error');
+            if (placement) {
+                $(placement).append(error)
+            } else {
+                error.insertAfter(element);
+                //Provicional
+                $('#clear').css('display', 'block');
+            }
+        }
+    });
+})

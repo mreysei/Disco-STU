@@ -23,7 +23,6 @@
         </h1>
         <div class="menu">
             <a role="types" href="">Inicio</a>
-            <a role="results" href="">Resultados</a>
             <a role="ranking" href="">Ranking</a>
             <a role="contact" href="">Contacto</a>
         </div>
@@ -35,11 +34,33 @@
             <div id="results"></div>
             <div id="ranking"></div>
             <div id="contact">
-                <div class="member">
-                    <h1>Omar</h1>
-                </div>
-                <div class="member">
-                    <h1>Michael</h1>
+                <div>
+                    <h1>Descripción</h1>
+                    <p>Proyecto desarrollado por alumnos del curso 2016-17, del Ciclo Superior de Formación
+                    Profesional Desarrollo de Aplicaciones Web.</p>
+
+                    <h1>Enlaces</h1>
+                    <p>Enlace al proyecto desde <a href="https://github.com/mreysei/Disco-STU" target="_blank">Github</a>
+                    o desde <a href="https://trello.com/dstu" target="_blank">Trello</a> ;) </p>
+
+                    <h1>Contacto</h1>
+                    <table>
+                        <tr>
+                            <th>Miembro</th>
+                            <th>Twitter</th>
+                            <th>Github</th>
+                        </tr>
+                        <tr>
+                            <td>Omar</td>
+                            <td><a href="http://twitter.com/omarlm17" target="_blank">@@omarlm17</a></td>
+                            <td><a href="https://github.com/omarlm" target="_blank">@@omarlm</a></td>
+                        </tr>
+                        <tr>
+                            <td>Michael</td>
+                            <td><a href="http://twitter.com/mreysei" target="_blank">@@mreysei</a></td>
+                            <td><a href="https://github.com/mreysei" target="_blank">@@mreysei</a></td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>
@@ -92,13 +113,13 @@
                 <form class="find">
                     <span class="title">Búsqueda</span>
                     <div class="input-field">
-                        <input id="search" type="text">
+                        <input id="search" name="search" type="text">
                         <label for="search">Disco o intérprete</label>
                     </div>
                     <label for="sliderAgno">Rango de años</label>
                     <div id="sliderAgno"></div>
-                    <input type="hidden" readonly="true" id="firstYear" />
-                    <input type="hidden" readonly="true" id="lastYear" />
+                    <input type="hidden" name="firstYear" readonly="readonly" id="firstYear" />
+                    <input type="hidden" name="lastYear" readonly="readonly" id="lastYear" />
                     <button class="btn waves-effect" type="submit">¡Buscar!</button>
                 </form>
             </div>
@@ -114,12 +135,14 @@
     </div>
     <script src="@Url.Content("~/Scripts/jquery.js")"></script>
     <script src="@Url.Content("~/Scripts/jquery.arctext.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.min.js")"></script>
     <script src="@Url.Content("~/Scripts/materialize.js")"></script>
     <script src="@Url.Content("~/Scripts/nouislider.js")"></script>
     <script src="@Url.Content("~/Scripts/chartist.js")"></script>
     <script src="@Url.Content("~/Scripts/React/react.js")"></script>
     <script src="@Url.Content("~/Scripts/React/react-dom.js")"></script>
     <script src="@Url.Content("~/Scripts/React/remarkable.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/filter.js")"></script>
     <script src="@Url.Content("~/Scripts/React/Generos.jsx")"></script>
     <script src="@Url.Content("~/Scripts/React/Ranking.jsx")"></script>
     <script src="@Url.Content("~/Scripts/React/Results.jsx")"></script>

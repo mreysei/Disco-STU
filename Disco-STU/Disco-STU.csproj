@@ -226,10 +226,18 @@
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\chartist.js" />
+    <Content Include="Scripts\filter.js" />
     <Content Include="Scripts\jquery.arctext.js" />
     <Content Include="Scripts\jquery.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\materialize.js" />
     <Content Include="Scripts\nouislider.js" />
+    <Content Include="Scripts\React\react-dom-server.js" />
+    <Content Include="Scripts\React\react-dom-server.min.js" />
+    <Content Include="Scripts\React\react-dom.min.js" />
+    <Content Include="Scripts\React\react-with-addons.js" />
+    <Content Include="Scripts\React\react-with-addons.min.js" />
+    <Content Include="Scripts\React\react.min.js" />
     <Content Include="Scripts\script.js" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -237,7 +245,9 @@
     <Compile Include="App_Start\ReactConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\ClientesController.cs" />
+    <Compile Include="Controllers\GenerosController.cs" />
+    <Compile Include="Controllers\RankingController.cs" />
+    <Compile Include="Controllers\ResultsController.cs" />
     <Compile Include="Controllers\WebController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -301,6 +311,8 @@
     <Content Include="Models\Model.edmx.diagram">
       <DependentUpon>Model.edmx</DependentUpon>
     </Content>
+    <Content Include="Scripts\React\Filter.jsx" />
+    <Content Include="Scripts\React\Program.jsx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -310,7 +322,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Scripts\React\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
