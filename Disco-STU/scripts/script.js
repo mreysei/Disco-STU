@@ -250,8 +250,32 @@ $(document).ready(function () {
             contentType: "application/json; charset=utf-8",
             data: JSON.stringify(dataRegister),
             success: function (data) {
-                console.log("insertado");
+                Console.log("insertado");
             }
         })
+    });
+
+    $('#btnLogin').click(function () {
+        //Login
+        
+        var loginEmail = $('#email').val();
+        var loginPassword = $('#password').val();
+
+        var dataLogin = {
+            Email: loginEmail,
+            Contrasenia: loginPassword
+        }
+
+        $.ajax({
+            type: 'POST',
+            url: 'Auth/Login',
+            dataType: 'JSON',
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify(dataLogin),
+            success: function (data) {
+                Console.log("Logueado");
+            }
+        })
+
     });
 })
