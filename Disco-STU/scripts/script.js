@@ -3,20 +3,20 @@ noUiSlider.create(slider, {
     start: [1970, 1990],
     connect: true,
     step: 1,
-	tooltips: true,
-	pips: { 
-		mode: 'values',
-		values: [1970, 1975, 1980, 1985, 1990],
-		density: 4
-	},
+    tooltips: true,
+    pips: {
+        mode: 'values',
+        values: [1970, 1975, 1980, 1985, 1990],
+        density: 4
+    },
     format: {
-	  to: function ( value ) {
-		return value;
-	  },
-	  from: function ( value ) {
-		return value;
-	  }
-	},
+        to: function (value) {
+            return value;
+        },
+        from: function (value) {
+            return value;
+        }
+    },
     range: {
         'min': 1970,
         'max': 1990
@@ -26,35 +26,35 @@ var valuesDivs = [
     $('#firstYear')[0],
 	$('#lastYear')[0]
 ];
-slider.noUiSlider.on('update', function( values, handle ) {
+slider.noUiSlider.on('update', function (values, handle) {
     valuesDivs[handle].value = values[handle];
 });
 
 var passwords = $('input[type="password"]');
 var buttons = [];
-for (i = 0; i < 10; i++){
+for (i = 0; i < 10; i++) {
     var random = addRandom();
-    var button = '<input type="button" class="psw" value="'+random+'"/>';
+    var button = '<input type="button" class="psw" value="' + random + '"/>';
     passwords.after(button);
 
 }
 passwords.after('<a href="#" id="clear">Limpiar campo</a>');
 function addRandom() {
     var valor = Math.floor(Math.random() * 10);
-    if (buttons.indexOf(valor) < 0){
+    if (buttons.indexOf(valor) < 0) {
         buttons.push(valor);
         return valor;
     } else {
         return addRandom();
     }
 }
-$('form').on('click', '.psw', function(){
+$('form').on('click', '.psw', function () {
     var input = $(this).closest('form').find('input[type="password"]');
     var value = $(this).val();
     input.val(input.val() + value);
     input.focus();
 });
-$('form').on('click', '#clear', function(){
+$('form').on('click', '#clear', function () {
     var input = $(this).closest('form').find('input[type="password"]');
     input.val("");
     input.blur();
@@ -65,10 +65,10 @@ $(window).scroll(sectionSize);
 $(document).ready(sectionSize);
 
 $(window).scroll(function () {
-    if ($(window).scrollTop() < 136  && $('#menuRight').hasClass('scrollControl')){
+    if ($(window).scrollTop() < 136 && $('#menuRight').hasClass('scrollControl')) {
         $('#menuRight').removeAttr('class');
-        $('.column.right').css({ "height" : $(window).height() });
-    } else if ($(window).scrollTop() >= 136 && !$('#menuRight').hasClass('scrollControl')){
+        $('.column.right').css({ "height": $(window).height() });
+    } else if ($(window).scrollTop() >= 136 && !$('#menuRight').hasClass('scrollControl')) {
         $('#menuRight').attr('class', 'scrollControl');
         $('.column.right').css({ "height": "auto" });
     }
@@ -135,7 +135,7 @@ function defaultPage() {
     $('#container').find(id).addClass('active');
     localStorage['types'];
 }
-setTimeout(function(){
+setTimeout(function () {
     $('.type').find('span').arctext({ radius: 100 });
 
     $('.type').on('click', function () {
@@ -222,5 +222,36 @@ $(document).ready(function () {
                 $('#clear').css('display', 'block');
             }
         }
+    });
+
+
+
+    $('#btnRegister').click(function () {
+
+        //Registrar
+        var nombre = $("#name").val();
+        var password = $("#password1").val();
+        var email = $("#email1").val();
+        var registerBirth = new Date();
+        var registerDate = new Date();
+
+        var dataRegister = {
+            Nombre: nombre,
+            Contrasenia: password,
+            Email: email,
+            FechaNacimiento: registerBirth,
+            FechaRegistro: registerDate
+        };
+
+        $.ajax({
+            type: "POST",
+            url: 'api/Clientes',
+            dataType: 'json',
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify(dataRegister),
+            success: function (data) {
+                console.log("insertado");
+            }
+        })
     });
 })
