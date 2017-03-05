@@ -51,7 +51,6 @@ var Resultados = React.createClass({
                 agno >= filter.firstYear && agno <= filter.lastYear && filter.type == null) ||
                 this.state.result[i].IdTipo == filter.type) &&
                 this.state.result[i].IdDisco != id) {
-                console.log(this.state.result[i].IdDisco);
                 resultList.push(
                     <div key={i} className="block">
                         <div className="info">

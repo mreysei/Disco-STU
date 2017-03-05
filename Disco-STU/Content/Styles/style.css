@@ -31,9 +31,9 @@ a {
     margin:0;
     padding:10px;
     padding-bottom:5px;
-    width: 25%;
 }
 .header h1 {
+    width:290px;
     margin-bottom:-6px;
     text-transform: uppercase;
     animation-name: Rainbow-Text;
@@ -51,12 +51,12 @@ a {
     margin-bottom:-25px;
 }
 .header .menu {
-    width:75%;
+    width: calc(100% - 300px);
     text-align:right;
 }
 .header .menu a{
     color: white;
-    transition: color .5s;
+    transition: background-color .5s;
     font-size: 26px;
     padding:5px 20px;
     margin:0;
@@ -65,6 +65,10 @@ a {
     display:inline-block;
     border-top-right-radius:10px;
     border-top-left-radius:10px;
+    background-color:#292929;
+}
+.header .menu a[role="find"]{
+    display:none;
 }
 .header .menu a.selected{
     cursor:default;
@@ -455,7 +459,7 @@ input[type="password"]{
     font-size:16px !important;
 }
 #ranking .ct-chart .ct-bar {
-    stroke-width: 70px;
+    stroke-width: 30px;
 }
 
 #contact table{
@@ -474,4 +478,111 @@ input[type="password"]{
 #contact table tr:nth-of-type(odd) td:nth-of-type(odd),
 #contact table tr:nth-of-type(even) td:nth-of-type(even){
     background-color:#eee;
+}
+
+@media screen and (max-width: 1820px) {
+    #results .block {
+        width:calc(50% - 10px);
+    }
+}
+@media screen and (max-width: 1400px) {
+    #ranking .rank:nth-of-type(1){
+        order:1;
+        width:100%;
+    }
+    #ranking .rank:nth-of-type(2){
+        order:2;
+    }
+    #ranking .rank:nth-of-type(3){
+        order:3;
+    }
+    #ranking .rank:nth-of-type(4){
+        order:4;
+    }
+    #ranking .rank:nth-of-type(5){
+        order:5;
+    }
+    #ranking .rank{
+        margin:5px !important;
+        padding:10px 0 !important;
+    }
+}
+@media screen and (max-width: 1400px) and (min-width: 601px) {
+    #ranking .rank:nth-of-type(2),
+    #ranking .rank:nth-of-type(3),
+    #ranking .rank:nth-of-type(4),
+    #ranking .rank:nth-of-type(5){
+        width:calc(50% - 10px) !important;
+    }
+
+}
+@media screen and (max-width: 1346px) {
+    #results .block {
+        width:calc(100% - 10px);
+    }
+}
+@media screen and (max-width: 920px) {
+    .section  {
+        display:flex;
+        flex-wrap:wrap;
+    }
+    .section .right {
+        order:1;
+        width:100%;
+    }
+    .section #container {
+        order:2;
+        width:100%;
+    }
+    .header .menu a[role="find"]{
+        display:inline-block;
+    }
+}
+@media screen and (max-width: 830px) {
+    #results .block {
+        width:calc(100% - 10px);
+    }
+}
+@media screen and (max-width: 880px) {
+    .header .menu,
+    .header h1 {
+        width: 100%;
+    }
+    .header .menu{
+        text-align:left;
+        padding-top:0;
+        margin-top:-60px;
+    }
+}
+@media screen and (max-width: 600px) {
+    #ranking .rank{
+        width:calc(100% - 10px) !important;
+    }
+}
+@media screen and (max-width: 575px) {
+    .header .menu a{
+        padding:5px;
+    }
+}
+@media screen and (max-width: 520px) {
+    #contact table{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 455px) and (min-width: 410px) {
+    .header .menu a{
+        font-size:20px;
+        padding:5px 10px;
+    }
+}
+@media screen and (max-width: 410px) {
+    .header .menu {
+        margin:0;
+    }
+    .header .menu a{
+        width:calc(100% + 40px);
+        margin:0-20px;
+        border-radius:0 !important;
+        padding:5px 40px;
+    }
 }

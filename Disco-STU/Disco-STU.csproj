@@ -122,8 +122,8 @@
       <HintPath>..\packages\MsieJavaScriptEngine.2.1.2\lib\net45\MsieJavaScriptEngine.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="React.Core, Version=3.0.1.0, Culture=neutral, PublicKeyToken=9aed67b161f7db78, processorArchitecture=MSIL">
@@ -250,10 +250,13 @@
     <Content Include="Scripts\nouislider.js" />
     <Content Include="Scripts\React\react-dom-server.js" />
     <Content Include="Scripts\React\react-dom-server.min.js" />
+    <Content Include="Scripts\React\react-dom.js" />
     <Content Include="Scripts\React\react-dom.min.js" />
     <Content Include="Scripts\React\react-with-addons.js" />
     <Content Include="Scripts\React\react-with-addons.min.js" />
+    <Content Include="Scripts\React\react.js" />
     <Content Include="Scripts\React\react.min.js" />
+    <Content Include="Scripts\React\remarkable.min.js" />
     <Content Include="Scripts\script.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -332,6 +335,9 @@
     <Content Include="Models\Model.edmx.diagram">
       <DependentUpon>Model.edmx</DependentUpon>
     </Content>
+    <Content Include="Scripts\React\Generos.jsx" />
+    <Content Include="Scripts\React\Ranking.jsx" />
+    <Content Include="Scripts\React\Results.jsx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
