@@ -329,6 +329,9 @@
     <Content Include="Views\Web\Index.cshtml" />
     <Content Include="git.ignore" />
     <Content Include="Scripts\React\Filter.jsx" />
+    <Content Include="Scripts\React\Generos.jsx" />
+    <Content Include="Scripts\React\Ranking.jsx" />
+    <Content Include="Scripts\React\Results.jsx" />
     <EntityDeploy Include="Models\Model.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model.Designer.cs</LastGenOutput>
@@ -336,9 +339,6 @@
     <Content Include="Models\Model.edmx.diagram">
       <DependentUpon>Model.edmx</DependentUpon>
     </Content>
-    <Content Include="Scripts\React\Generos.jsx" />
-    <Content Include="Scripts\React\Ranking.jsx" />
-    <Content Include="Scripts\React\Results.jsx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

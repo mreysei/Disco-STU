@@ -46,7 +46,7 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Idcliente" Type="Int32" />
     <Property Name="iddisco" Type="Int32" />
     <Property Name="Puntuacion1" Type="Int32" />
@@ -66,12 +66,12 @@
     <Key>
       <PropertyRef Name="IdDisco" />
     </Key>
+    <Property Name="IdDisco" Type="Int32" Nullable="false" />
     <Property Name="Titulo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
     <Property Name="Agno" Type="Double" />
     <Property Name="Interprete" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
     <Property Name="mediaPuntuacion" Type="Int32" />
     <Property Name="IdTipo" Type="Int32" />
-    <Property Name="IdDisco" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="v_tipo">
     <Key>

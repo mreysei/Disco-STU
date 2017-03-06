@@ -62,12 +62,12 @@
     <EntitySetMapping Name="v_disco">
       <EntityTypeMapping TypeName="DiscoSTUModel.v_disco">
         <MappingFragment StoreEntitySet="v_disco">
+          <ScalarProperty Name="IdDisco" ColumnName="IdDisco" />
           <ScalarProperty Name="Titulo" ColumnName="Titulo" />
           <ScalarProperty Name="Agno" ColumnName="Agno" />
           <ScalarProperty Name="Interprete" ColumnName="Interprete" />
           <ScalarProperty Name="mediaPuntuacion" ColumnName="mediaPuntuacion" />
           <ScalarProperty Name="IdTipo" ColumnName="IdTipo" />
-          <ScalarProperty Name="IdDisco" ColumnName="IdDisco" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

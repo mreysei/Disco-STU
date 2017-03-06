@@ -111,9 +111,6 @@ setTimeout(() => {
         $(this).closest('.block').children('.info').slideDown();
         $(this).closest('.block').children('.setStars').slideUp();
         $(this).closest('.block').addClass('success');
-        setTimeout(() => {
-            $(this).closest('.block').removeClass('success');
-        }, 1000);
 
         var puntuacion = parseInt($(this).attr('id'));
         var disco = parseInt($(this).closest('.block').attr('id'));
@@ -123,9 +120,10 @@ setTimeout(() => {
         var dataPuntuacion = {
             Idcliente: usuario,
             iddisco: disco,
-            Puntuacion: puntuacion,
+            Puntuacion1: puntuacion,
             Fecha: date
         }
+        console.log(dataPuntuacion);
         $.ajax({
             type: 'POST',
             url: 'api/Puntuacion',
@@ -133,9 +131,13 @@ setTimeout(() => {
             contentType: "application/json; charset=utf-8",
             data: JSON.stringify(dataPuntuacion),
             success: function (data) {
-                Console.log("Puntuado");
+                console.log("Puntuado");
             }
         })
+        setTimeout(() => {
+            $(this).closest('.block').removeClass('success');
+            location.reload();
+        }, 1000);
     });
 }, 2000);
 
@@ -265,7 +267,7 @@ $(document).ready(function () {
             contentType: "application/json; charset=utf-8",
             data: JSON.stringify(dataRegister),
             success: function (data) {
-                Console.log("insertado");
+                console.log("insertado");
             }
         })
     });
@@ -287,7 +289,7 @@ $(document).ready(function () {
             contentType: "application/json; charset=utf-8",
             data: JSON.stringify(dataLogin),
             success: function (data) {
-                Console.log("Logueado");
+               console.log("Logueado");
             }
         })
         location.reload();
@@ -302,7 +304,7 @@ $(document).ready(function () {
             dataType: 'JSON',
             contentType: "application/json; charset=utf-8",
             success: function () {
-                Console.log("Logout");
+                console.log("Logout");
             }
         })
         location.reload();
