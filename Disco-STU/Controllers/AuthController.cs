@@ -43,5 +43,12 @@ namespace Disco_STU.Controllers
                 return View();
             }
         }
+
+        public ActionResult LogOut()
+        {
+            FormsAuthentication.SignOut();
+            Session.Abandon();
+            return RedirectToAction("Index", "Web");
+        }
     }
 }

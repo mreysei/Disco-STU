@@ -100,20 +100,44 @@ function selectMenu(e, auto) {
 }
 
 $('#results').on('click', '.stars', function () {
-    if (!$(this).hasClass('dis')) {
+    if ($(this).attr('id') == "true") {
         $(this).closest('.info').slideUp();
         $(this).closest('.block').children('.setStars').slideDown();
     }
 });
 
-$('.setStars').on('click', '.star', function () {
-    $(this).closest('.block').children('.info').slideDown();
-    $(this).closest('.block').children('.setStars').slideUp();
-    $(this).closest('.block').addClass('success');
-    setTimeout(() => {
-        $(this).closest('.block').removeClass('success');
-    }, 1000);
-});
+setTimeout(() => {
+    $('.setStars').on('click', '.star', function () {
+        $(this).closest('.block').children('.info').slideDown();
+        $(this).closest('.block').children('.setStars').slideUp();
+        $(this).closest('.block').addClass('success');
+        setTimeout(() => {
+            $(this).closest('.block').removeClass('success');
+        }, 1000);
+
+        var puntuacion = parseInt($(this).attr('id'));
+        var disco = parseInt($(this).closest('.block').attr('id'));
+        var usuario = $('#usuario').data('usuario');
+        var date = new Date();
+
+        var dataPuntuacion = {
+            Idcliente: usuario,
+            iddisco: disco,
+            Puntuacion: puntuacion,
+            Fecha: date
+        }
+        $.ajax({
+            type: 'POST',
+            url: 'api/Puntuacion',
+            dataType: 'JSON',
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify(dataPuntuacion),
+            success: function (data) {
+                Console.log("Puntuado");
+            }
+        })
+    });
+}, 2000);
 
 $(document).ready(defaultPage);
 function defaultPage() {
@@ -218,8 +242,7 @@ $(document).ready(function () {
 
 
 
-    $('#btnRegister').click(function () {
-
+    $('#log').click(function () {
         //Registrar
         var nombre = $("#name").val();
         var password = $("#password1").val();
@@ -249,7 +272,6 @@ $(document).ready(function () {
 
     $('#btnLogin').click(function () {
         //Login
-        
         var loginEmail = $('#email').val();
         var loginPassword = $('#password').val();
 
@@ -268,6 +290,21 @@ $(document).ready(function () {
                 Console.log("Logueado");
             }
         })
+        location.reload();
 
+    });
+
+    $('#btnLogout').click(function () {
+        //Logout
+        $.ajax({
+            type: 'POST',
+            url: 'Auth/LogOut',
+            dataType: 'JSON',
+            contentType: "application/json; charset=utf-8",
+            success: function () {
+                Console.log("Logout");
+            }
+        })
+        location.reload();
     });
 })

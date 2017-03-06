@@ -74,7 +74,7 @@ CREATE TABLE Interprete (
 -- Table structure for table 'Puntuacion'
 --
 CREATE TABLE Puntuacion (
-  Id INT NOT NULL primary key, 
+  Id INT NOT NULL primary key identity, 
   Idcliente INT, 
   iddisco INT, 
   Puntuacion INT, 

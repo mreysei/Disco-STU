@@ -2,9 +2,10 @@
 let controlTime = true;
 for (i = 0; i < 10; i++) {
     stars.push(
-        <div key={i} className="star"></div>
+        <div key={i} id={i} className="star"></div>
     );
 }
+let login = $('#usuario').attr('class') == "card" ? true : false ;
 const filter = {
     search: '',
     firstYear: 1970,
@@ -52,13 +53,13 @@ var Resultados = React.createClass({
                 this.state.result[i].IdTipo == filter.type) &&
                 this.state.result[i].IdDisco != id) {
                 resultList.push(
-                    <div key={i} className="block">
+                    <div key={i} id={this.state.result[i].IdDisco} className="block">
                         <div className="info">
                             <span>{this.state.result[i].Titulo} <small>{
                                    (this.state.result[i].Agno != null) ? ("(" + this.state.result[i].Agno + ")") : ""
                                 }</small></span>
                             <span><div className="chip">{this.state.result[i].Interprete}</div></span>
-                            <span><div className="stars">
+                            <span><div className="stars" id={ login }>
                                 {this.state.result[i].mediaPuntuacion == null ? 0 : this.state.result[i].mediaPuntuacion}  
                                 <div className="star"></div>
                             </div></span>

@@ -269,6 +269,7 @@
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\ClientesController.cs" />
     <Compile Include="Controllers\GenerosController.cs" />
+    <Compile Include="Controllers\PuntuacionController.cs" />
     <Compile Include="Controllers\RankingController.cs" />
     <Compile Include="Controllers\ResultsController.cs" />
     <Compile Include="Controllers\WebController.cs" />
